@@ -47,7 +47,7 @@ public class Tree<E> {
 	// inside the Tree class.
 	
 	// Determines the depth of a given node
-	public int depthOfNode(TreeNode node) {
+	public int depth(TreeNode node) {
 		// count steps up to get the root
 		TreeNode current = node;
 		int count = 0;
