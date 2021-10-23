@@ -2,7 +2,6 @@ package edu.mills.cs124.Assignment7;
 
 import java.util.ArrayList;
 
-import edu.mills.cs124.Assignment7.Tree.TreeNode;
 
 public class BinaryTree<E> {
 	
@@ -26,6 +25,12 @@ public class BinaryTree<E> {
 			node.parent = this;
 		}
 		
+		public void addRightChild(BinaryTreeNode node) throws IllegalArgumentException {
+			if (this.right != null) 
+				throw new IllegalArgumentException("Attempt to add a right child when one already exist");
+			this.right = node;
+			node.parent = this;
+		}
 		
 		public boolean isExternal() {
 			// TO DO:
@@ -47,6 +52,15 @@ public class BinaryTree<E> {
 	// a reference to the root node (if there is one)
 	private BinaryTreeNode root;
 		
+
+	// Use this method to give the tree a root node.
+	// It will return a reference to the root node created.
+	public BinaryTreeNode addRoot(E e) {
+		root = new BinaryTreeNode(e);
+		return root;
+	}
+	
+	
 	// Determines the depth of a given node
 	public int depth(BinaryTreeNode node) {
 		// TO DO:
@@ -57,12 +71,49 @@ public class BinaryTree<E> {
 	}
 	
 	// Determines the height of a tree(or subtree) below a given node
-	public int height(TreeNode node) {
+	public int height(BinaryTreeNode node) {
 		// TO DO:
 		// Implement this method
 		
 		
+		return 42; // placeholder
+	}
+	
+	public boolean contains(E target) {
+		// TO DO:
+		// Search all elements of the tree and return true/false
+		//  to indicate whether the target value is found in the tree.
+		// Hint: Think recursively!
+		
+		
+		return false; // placeholder
+	}
+	
+	public void remove(E target) {
+		// TO DO:
+		// Find and remove the any occurrence of the target element
+		// in the tree, if there is any. 
+		// You may assume there there is at most one matching node.
+		// Hint: Draw pictures.
+		
+
+	}
+	
+	public void displayPreOrder() {
+		// TO DO:
+		// Print out the elements in the tree using pre-order traversal.
 		
 	}
 	
+	public void displayInOrder() {
+		// TO DO:
+		// Print out the elements in the tree using in-order traversal.
+		
+	}
+	
+	public void displayPostOrder() {
+		// TO DO:
+		// Print out the elements in the tree using post-order traversal.
+	
+	}
 }
