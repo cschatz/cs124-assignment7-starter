@@ -1,73 +1,29 @@
 package edu.mills.cs124.Assignment7;
 
-import java.util.ArrayList;
-
 public class BinaryTree<E> {
-	
-	private class BinaryTreeNode {
-		E element;
-		BinaryTreeNode parent;
-		BinaryTreeNode left;
-		BinaryTreeNode right;
-		
-		// constructor
-		public BinaryTreeNode(E element) {
-			this.element = element;
-			this.left = null;
-			this.right = null;
-		}
-		
-		public void addLeftChild(BinaryTreeNode node) throws IllegalArgumentException {
-			if (this.left != null) 
-				throw new IllegalArgumentException("Attempt to add a left child when one already exist");
-			this.left = node;
-			node.parent = this;
-		}
-		
-		public void addRightChild(BinaryTreeNode node) throws IllegalArgumentException {
-			if (this.right != null) 
-				throw new IllegalArgumentException("Attempt to add a right child when one already exist");
-			this.right = node;
-			node.parent = this;
-		}
-		
-		public boolean isExternal() {
-			// TO DO:
-			// Return true/false depending on whether this is an external (leaf) node
-			
-			
-			return false; // placeholder	
-		}
-		
-		public boolean isInternal() {
-			// TO DO:
-			// Return true/false depending on whether this is an internal (non-leaf) node
 
-			return false; // placeholder	
-		}
-	}
 	
 	// The binary tree class as a whole only has one instance variable, 
 	// a reference to the root node (if there is one)
-	private BinaryTreeNode root;
+	private BinaryTreeNode<E> root;
 		
 
 	// Use this method to give the tree a root node.
 	// It will return a reference to the root node created.
-	public BinaryTreeNode addRoot(E e) {
-		root = new BinaryTreeNode(e);
+	public BinaryTreeNode<E> addRoot(E e) {
+		root = new BinaryTreeNode<E>(e);
 		return root;
 	}
 	
 	// Use these two method to add a new child node below an existing node.
 	// It will return a reference to the new node created.
-	public BinaryTreeNode addLeftChild(BinaryTreeNode node, E data) {
-		BinaryTreeNode added = new BinaryTreeNode(data);
+	public BinaryTreeNode<E> addLeftChild(BinaryTreeNode<E> node, E data) {
+		BinaryTreeNode<E> added = new BinaryTreeNode<E>(data);
 		node.addLeftChild(added);
 		return added;
 	}
-	public BinaryTreeNode addRightChild(BinaryTreeNode node, E data) {
-		BinaryTreeNode added = new BinaryTreeNode(data);
+	public BinaryTreeNode<E> addRightChild(BinaryTreeNode<E> node, E data) {
+		BinaryTreeNode<E> added = new BinaryTreeNode<E>(data);
 		node.addRightChild(added);
 		return added;
 	}
@@ -75,7 +31,7 @@ public class BinaryTree<E> {
 	
 	
 	// Determines the depth of a given node
-	public int depth(BinaryTreeNode node) {
+	public int depth(BinaryTreeNode<E> node) {
 		// TO DO:
 		// Implement this method
 		
@@ -84,7 +40,7 @@ public class BinaryTree<E> {
 	}
 	
 	// Determines the height of a tree(or subtree) below a given node
-	public int height(BinaryTreeNode node) {
+	public int height(BinaryTreeNode<E> node) {
 		// TO DO:
 		// Implement this method
 		
