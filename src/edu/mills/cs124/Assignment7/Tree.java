@@ -50,9 +50,17 @@ public class Tree<E> {
 	
 	// Use this method to give the tree a root node.
 	// It will return a reference to the root node created.
-	public TreeNode addRoot(E e) {
-		root = new TreeNode(e);
+	public TreeNode addRoot(E data) {
+		root = new TreeNode(data);
 		return root;
+	}
+	
+	// Use this method to add a new child node below an existing node.
+	// It will return a reference to the new node created.
+	public TreeNode addChild(TreeNode node, E data) {
+		TreeNode added = new TreeNode(data);
+		node.addChild(added);
+		return added;
 	}
 	
 	

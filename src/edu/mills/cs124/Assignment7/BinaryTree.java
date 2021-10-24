@@ -2,7 +2,6 @@ package edu.mills.cs124.Assignment7;
 
 import java.util.ArrayList;
 
-
 public class BinaryTree<E> {
 	
 	private class BinaryTreeNode {
@@ -59,6 +58,20 @@ public class BinaryTree<E> {
 		root = new BinaryTreeNode(e);
 		return root;
 	}
+	
+	// Use these two method to add a new child node below an existing node.
+	// It will return a reference to the new node created.
+	public BinaryTreeNode addLeftChild(BinaryTreeNode node, E data) {
+		BinaryTreeNode added = new BinaryTreeNode(data);
+		node.addLeftChild(added);
+		return added;
+	}
+	public BinaryTreeNode addRightChild(BinaryTreeNode node, E data) {
+		BinaryTreeNode added = new BinaryTreeNode(data);
+		node.addRightChild(added);
+		return added;
+	}
+		
 	
 	
 	// Determines the depth of a given node
